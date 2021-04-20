@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'interiorshop.apps.InteriorshopConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
-    'product.app.ProductConfig'
+    'product.app.ProductConfig',
     'wwwapp.apps.WwwappConfig',
     'todo.apps.TodoConfig',
     'contact.apps.ContactConfig',
