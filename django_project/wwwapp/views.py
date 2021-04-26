@@ -22,9 +22,4 @@ def home(request):
         return render(request, 'wwwapp/home.html')
 
 
-# def profile(request):
-#     return render(request, 'wwwapp/profile.html')
-#
-#
-# def about(request):
-#     return render(request, 'wwwapp/update_task.html')
+

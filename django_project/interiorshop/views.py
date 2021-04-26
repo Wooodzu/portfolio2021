@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from product.models import Product
 
 def frontpage(request):
-    return render(request, 'interiorshop/frontpage.html')
+    newest_products = Product.objects.all()[0:8]
+    return render(request, 'interiorshop/frontpage.html', {'newest_products': newest_products})
 
 
 def contact(request):
