@@ -4,8 +4,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .models import Vendor
 from django.utils.text import slugify
-
-
 from product.models import Product
 from .forms import ProductForm
 
@@ -31,9 +29,9 @@ def become_vendor(request):
 @login_required
 def vendor_admin(request):
     vendor = request.user.vendor
-    product = vendor.products.all()
+    products = vendor.products.all()
 
-    return render(request, 'vendor/vendor_admin.html', {'vendor': vendor, 'product': product})
+    return render(request, 'vendor/vendor_admin.html', {'vendor': vendor, 'products': products})
 
 
 @login_required
