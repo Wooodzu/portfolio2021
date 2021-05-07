@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'cart.apps.CartConfig',
     'vendor.apps.VendorConfig',
     'interiorshop.apps.InteriorshopConfig',
     'users.apps.UsersConfig',
@@ -152,3 +153,6 @@ EMAIL_USE_TLS = True
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+SESSION_COOKIE_AGE = 86400
+CART_SESSION_ID = 'cart'
