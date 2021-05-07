@@ -7,7 +7,6 @@ from .forms import AddToCartForm
 from cart.cart import Cart
 
 
-
 def search(request):
     query = request.GET.get('query', '')
     products = Product.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
