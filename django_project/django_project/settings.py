@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'vendor.apps.VendorConfig',
     'interiorshop.apps.InteriorshopConfig',
     'users.apps.UsersConfig',
+    'order.apps.OrderConfig',
     'crispy_forms',
     'product.apps.ProductConfig',
     'wwwapp.apps.WwwappConfig',
@@ -144,6 +145,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+STRIPE_PUB_KEY = 'pk_test_51Ip9bsJl7ciSSdqSgeWbqADqenq8rKYXwPcocPjLnEDjIphhOAzRRPVFjcZC4iRhahIZAHgrzAOZxlBvgCoqmA5o0074tNuM3r'
+STRIPE_SECRET_KEY = 'sk_test_51Ip9bsJl7ciSSdqSl3DfDtDwuITDC1HswvL1yg6MwvjxEKDWPYV2Jl5nZpppCriFSuzXMGbytqPqX1lwJAGWeeNp002U3am031'
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -151,6 +156,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'artur199933@gmail.com'
 EMAIL_HOST_PASSWORD = 'dvz---- mam haslo w folderze i w os.environtment'
 EMAIL_USE_TLS = True
+DEFAULT_EMAIL_FROM = 'interiorstore <noreply@artur199933@gmail.com>'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'

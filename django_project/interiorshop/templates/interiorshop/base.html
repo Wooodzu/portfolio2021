@@ -68,6 +68,12 @@
     {% else %}
         <a href="{% url 'become_vendor' %}">Become vendor</a>
     {% endif %}
+
+    <hr>
+
+    <a href="{% url 'vendors' %}">Vendors:</a>
 </footer>
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>

@@ -33,6 +33,7 @@ def updateTask(request, pk):
 
     return render(request, 'todo/update_task.html', context)
 
+
 def deleteTask(request, pk):
     item = Task.objects.get(id=pk)
 
