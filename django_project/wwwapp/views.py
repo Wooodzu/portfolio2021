@@ -4,13 +4,13 @@ from django.core.mail import send_mail
 
 def home(request):
     if request.method == 'POST':
-        name = request.POST['name']
-        email = request.POST['email']
-        subject = request.POST['subject']
-        message = request.POST['message']
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
 
         send_mail(
-            'message from' +' '+ name +' '+ email,
+            'message from' + ' ' +str(name) + ' ' + email,
             message,
             email,
             ['artur199933@gmail.com'],
