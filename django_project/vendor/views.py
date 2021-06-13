@@ -75,7 +75,7 @@ def edit_vendor(request):
         email = request.POST.get('email', '')
 
         if name:
-            vendor.created_by.email =email
+            vendor.created_by.email = email
             vendor.created_by.save()
 
             vendor.name = name

@@ -158,8 +158,6 @@ EMAIL_HOST_PASSWORD = 'dvz---- mam haslo w folderze i w os.environtment'
 EMAIL_USE_TLS = True
 DEFAULT_EMAIL_FROM = 'interiorstore <noreply@artur199933@gmail.com>'
 
-LOGIN_REDIRECT_URL = 'blog-home'
-LOGIN_URL = 'login'
 
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
