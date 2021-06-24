@@ -123,7 +123,30 @@
     return true;
   });
 
+  function php_email_form_submit(this_form, action, data) {
+    $.ajax({
+      type: "POST",
+      url: action,
+      data: data,
+      timeout: 40000
 
+    }).fail( function(data){
+      console.log(data);
+      var error_msg = "Form submission failed!<br>";
+      if(data.statusText || data.status) {
+        error_msg += 'Status:';
+        if(data.statusText) {
+          error_msg += ' ' + data.statusText;
+        }
+        if(data.status) {
+          error_msg += ' ' + data.status;
+        }
+        error_msg += '<br>';
+      }
+      if(data.responseText) {
+        error_msg += data.responseText;
+      }
+    });
   }
 
 })(jQuery);
