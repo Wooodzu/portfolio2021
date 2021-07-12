@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i7zx0+8s)wkd9idf52nida2*+86yobe9=^*d5ng_lah9l4=!sg'
+SECRET_KEY = 'blablabalbabalblabi7zx0+8s)wkd9idf52nida2*+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -132,7 +132,15 @@ USE_TZ = True
 
 
 STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -141,9 +149,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
 
 STRIPE_PUB_KEY = 'pk_test_51Ip9bsJl7ciSSdqSgeWbqADqenq8rKYXwPcocPjLnEDjIphhOAzRRPVFjcZC4iRhahIZAHgrzAOZxlBvgCoqmA5o0074tNuM3r'
 STRIPE_SECRET_KEY = 'sk_test_51Ip9bsJl7ciSSdqSl3DfDtDwuITDC1HswvL1yg6MwvjxEKDWPYV2Jl5nZpppCriFSuzXMGbytqPqX1lwJAGWeeNp002U3am031'
@@ -153,8 +161,8 @@ STRIPE_SECRET_KEY = 'sk_test_51Ip9bsJl7ciSSdqSl3DfDtDwuITDC1HswvL1yg6MwvjxEKDWPY
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'artur199933@gmail.com'
-EMAIL_HOST_PASSWORD = 'dvz---- mam haslo w folderze i w os.environtment'
+EMAIL_HOST_USER = os.environ.get('email')
+EMAIL_HOST_PASSWORD = os.environ.get('Password')
 EMAIL_USE_TLS = True
 DEFAULT_EMAIL_FROM = 'interiorstore <noreply@artur199933@gmail.com>'
 

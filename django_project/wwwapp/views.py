@@ -8,16 +8,17 @@ def home(request):
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
+        strname = str(name)
 
         send_mail(
-            'message from' + ' ' +str(name) + ' ' + email,
+            'message from' + ' ' + strname + ' ' + email,
             message,
             email,
             ['artur199933@gmail.com'],
             fail_silently=False,
         )
 
-        return render(request, 'wwwapp/home.html', {'name': name})
+        return render(request, 'wwwapp/home.html', {'strname': strname})
     else:
         return render(request, 'wwwapp/home.html')
 
